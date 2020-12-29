@@ -1,0 +1,43 @@
+// button
+@mixin button-size($paddinf-y, $padding-x, $font-size, $border-radius) {
+  padding: $paddinf-y $padding-x;
+  font-size: $font-size;
+  border-radius: $border-radius;
+}
+@mixin button-style(
+  $background,
+  $border,
+  $color,
+  // 指定默认参数
+  $hover-background: lighten($background, 7.5%),
+  $hover-border: lighten($border, 10%),
+  $hover-color: $color
+) {
+  color: $color;
+  background: $background;
+  border-color: $border;
+  &:hover {
+    color: $hover-color;
+    background: $hover-background;
+    border-color: $hover-border;
+  }
+  &:focus,
+  &.focus {
+    color: $hover-color;
+    background: $hover-background;
+    border-color: $hover-border;
+  }
+  //   &:disabled css3属性选择器
+  &:disabled,
+  &.disabled {
+    color: $color;
+    background: $background;
+    border-color: $border;
+  }
+}
+// alert
+@mixin alert-style($background, $border, $color) {
+  color: $color;
+  background: $background;
+  border-color: $border;
+}
